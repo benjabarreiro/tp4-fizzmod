@@ -1,0 +1,20 @@
+<body>
+    <% if(productos.length > 0) { %>
+        <h1>Nuestros productos</h1>
+            <div class="table-responsive">
+                <table class="table table-dark">
+                    <tr style="color: yellow;"> <th>Nombre</th> <th>Precio</th> <th>Descripción</th> <th>Imagen</th> </tr>
+                    <% productos.forEach(element => { %> 
+                        <tr>
+                            <td><%=element.nombre%></td>
+                            <td>$<%=element.precio%></td>
+                            <td><%=element.descripcion%></td>
+                            <td><img src="<%= element.urlImg %>" alt="<%= element.nombre %> "></td>
+                        </tr>
+                    <% }) %>
+                </table>
+            </div>
+    <% } else { %>
+        <h2>No hay productos para listar</h2>
+    <% } %>
+</body>
